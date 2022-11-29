@@ -1,0 +1,48 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    background-color: white;
+}
+
+.headerLogo{
+    height: 25px;
+    object-fit: contain;
+    /* margin-left: 20px; */
+
+}
+
+.headerTopLeft{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.headerInput{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.headerTopRight{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerInput > input{
+    flex: 1;
+    border: none;
+}
+
+.headerInput > .headerSearchButton{
+    width: 50px !important;
+    background-color: grey;
+}

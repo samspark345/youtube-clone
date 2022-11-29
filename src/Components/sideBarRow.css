@@ -1,0 +1,36 @@
+.sideBarRowDetails{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin-left: 15px;
+    border-radius: 15px;
+}
+
+.sideBarRowDetails > h1{
+    font-size: 16px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+.sideBarRowDetails > .icon{
+    font-size: large !important;
+}
+
+.sideBarRowDetails:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.sideBarRowDetails:hover > .icon{
+    color: red;
+}
+
+.sideBarRowDetails:hover > .title{
+    font-weight: bold;
+}
