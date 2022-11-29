@@ -23,11 +23,6 @@ function VideoCard(props) {
         const publishSeconds = parseInt(dateToConvert.substring(17, 19))
 
         const today = new Date();
-        const currentYear = today.getFullYear()
-        const currentMonth = today.getMonth()
-        const currentDay = today.getDate()
-        const currentHour = today.getHours()
-        const currentMinute = today.getMinutes()
 
         const deltaYear = today.getFullYear() - publishYear
         const deltaMonth = today.getMonth() - publishMonth
@@ -67,7 +62,7 @@ function VideoCard(props) {
 
     const titleToDisplay = title.length > 54? trimTitle(title) : title
     const publishDate =  new Date(timestamp.substring(0, 10));
-    console.log(publishDate);
+    // console.log(publishDate);
 
   return (
     <div className='videoCard'>

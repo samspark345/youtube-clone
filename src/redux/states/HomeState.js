@@ -1,8 +1,9 @@
 
-const HomeState = {
+const initHomeState = {
     videos: [],
     totalVideoCount: 0,
-    loading: true
+    loading: true,
+    nextPageToken: null
 };
 
-export default HomeState;
+export default initHomeState;

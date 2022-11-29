@@ -19,26 +19,26 @@ const updateYoutubeRecommendedVids = (action$, state$) =>
         ofType(GET_RECOMMENDED_YT_VIDS),
         mergeMap((action) => {
             return new Observable((observer) => {
-                const totalVideoCount = state$.value.HomeState.totalVideoCount + 20
-                observer.next(IncreaseVideosToGet(totalVideoCount));
+                const nextPageToken = state$.value.homeState.nextPageToken
+                
                 observer.next(SetVideosToLoad());
-                console.log(state$.value.HomeState)
                 request('videos',
                     {
                         params:{
                             part: 'snippet,contentDetails,statistics',
                             chart: 'mostPopular',
                             regionCode: 'CA',
-                            maxResults: totalVideoCount,
-                            pageToken: '',
+                            maxResults: 20,
+                            pageToken: nextPageToken,
                         }
                     }
                 ).then((response) => {
-                    console.log(response.data.items)
+                    console.log(response.data)
+                    // observer.next(IncreaseVideosToGet(response.data.));
                     observer.next(GetYoutubeRecommendedVidsOnSuccess(response));
-                    console.log(state$.value.HomeState)
+                    console.log(state$.value.homeState)
                     observer.next(SetVideosToStopLoad());
-                    console.log(state$.value.HomeState)
+                    console.log(state$.value.homeState)
                     observer.complete();
                 })
             })

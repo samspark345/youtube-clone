@@ -6,7 +6,7 @@ import './recVideos.css'
 import VideoCard from './VideoCard.js'
 
 const RecVideos = ({handleRefresh}) => {
-  const homeStateSelector = useSelector((state) => state.HomeState)
+  const homeStateSelector = useSelector((state) => state.homeState)
   const videoData = homeStateSelector.videos
   const loading = homeStateSelector.loading
 

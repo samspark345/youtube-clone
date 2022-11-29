@@ -49,8 +49,8 @@ class Homescreen extends Component {
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-    count: state.count,
-    HomeState: state.HomeState
+    count: state.mainState.count,
+    HomeState: state.homeState.HomeState
   }
 };
 

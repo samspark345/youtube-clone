@@ -1,6 +1,9 @@
 import rootState from './rootState'
+import {combineReducers} from 'redux'
+import homeReducer from '../reducers/homeReducer';
 
-const rootReducer = (state = rootState, action) => {
+
+const main = (state = rootState.main, action) => {
     switch(action.type){
         case('INCREMENT') : {
             return ({...state, count: state.count + 1});
@@ -9,13 +12,13 @@ const rootReducer = (state = rootState, action) => {
         case('DECREMENT') : {
             return ({...state, count: state.count - 1});
         }
-
-        case('GET_RECOMMENDED_YT_VIDS_ON_SUCCESS') : {
-            return({...state, HomeState: {videos: action.payload.data.items} })
-        }
         default:
             return state
     }
 }
 
+const rootReducer = combineReducers({
+    mainState: main,
+    homeState: homeReducer
+})
 export default rootReducer
